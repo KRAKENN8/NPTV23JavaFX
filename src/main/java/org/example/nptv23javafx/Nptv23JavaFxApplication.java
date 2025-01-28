@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import org.example.nptv23javafx.tools.SpringFXMLLoader;
 import org.springframework.boot.ConfigurableBootstrapContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +26,7 @@ public class Nptv23JavaFxApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
+        SpringFXMLLoader springFXMLLoader = applicationContext.getBean(SpringFXMLLoader.class);
 //        Label label = new Label("Hello World");
 //        Button button = new Button("Click me!");
 //        button.setOnAction(e -> {
