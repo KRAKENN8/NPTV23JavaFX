@@ -26,6 +26,23 @@ public class MenuFormController {
         getPrimaryStage().setScene(scene);
         getPrimaryStage().setTitle("Создание нового пользователя");
     }
+
+    @FXML private void showBookForm() throws IOException {
+        FXMLLoader fxmlLoader = springFXMLLoader.load("/book/BookForm.fxml");
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        getPrimaryStage().setScene(scene);
+        getPrimaryStage().setTitle("Добавление новой книги");
+    }
+
+    @FXML private void goBack() throws IOException {
+        FXMLLoader fxmlLoader = springFXMLLoader.load("/main/mainForm.fxml");
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        getPrimaryStage().setScene(scene);
+        getPrimaryStage().setTitle("Nptv23JavaFX Библиотека");
+    }
+
     private Stage getPrimaryStage() {
         return Nptv23JavaFxApplication.primaryStage;
     }
