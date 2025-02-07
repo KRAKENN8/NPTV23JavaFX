@@ -2,17 +2,20 @@ package org.example.nptv23javafx.tools;
 
 import javafx.fxml.FXMLLoader;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SpringFXMLLoader {
+
     private ApplicationContext applicationContext;
-    public SpringFXMLLoader(ConfigurableApplicationContext applicationContext) {
+
+    public SpringFXMLLoader(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
-    public FXMLLoader load(String fxmlPath); {
+    public FXMLLoader load(String fxmlPath){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlPath));
         fxmlLoader.setControllerFactory(applicationContext::getBean);
-        return fxmlLoader
+        return fxmlLoader;
     }
 }
